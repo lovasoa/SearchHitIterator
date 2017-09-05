@@ -1,9 +1,10 @@
+package com.github.lovasoa.searchhititerator;
+
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.search.SearchHit;
-
 import java.util.Iterator;
 
 public class SearchHitIterator implements Iterator<SearchHit> {
