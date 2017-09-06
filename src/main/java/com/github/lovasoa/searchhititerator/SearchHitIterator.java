@@ -5,6 +5,7 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.search.SearchHit;
+
 import java.util.Iterator;
 
 public class SearchHitIterator implements Iterator<SearchHit> {
@@ -17,10 +18,6 @@ public class SearchHitIterator implements Iterator<SearchHit> {
         this.client = client;
         this.currentResponse = builder.setScroll(scrollTimeout).get();
         this.scrollTimeout = scrollTimeout;
-    }
-
-    public SearchHitIterator(Client client, SearchRequestBuilder builder) {
-        this(client, builder, new TimeValue(60000));
     }
 
     public boolean hasNext() {
